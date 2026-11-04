@@ -15,8 +15,13 @@ Example:
 """
 
 from .severity import Severity
-
+from .issue_registry import IssueRegistry
+from .score import ArchiveHealthScore
+from .engine import ArchiveHealthEngine
 
 __all__ = [
     "Severity",
+    "IssueRegistry",
+    "ArchiveHealthScore",
+    "ArchiveHealthEngine",
 ]
