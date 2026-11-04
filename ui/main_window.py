@@ -4,6 +4,8 @@ main_window.py
 Primary application window for LegacyLens V3.
 """
 
+from PySide6.QtGui import QAction
+
 from PySide6.QtWidgets import (
     QMainWindow,
     QStackedWidget,
@@ -45,12 +47,12 @@ class MainWindow(QMainWindow):
 
         self.stack = QStackedWidget()
 
+        #
+        # Create views
+        #
+
         self.home_view = HomeView(
             self.registry
-        )
-
-        self.home_view.module_selected.connect(
-            self.open_workspace
         )
 
         self.photos_workspace = (
@@ -65,6 +67,14 @@ class MainWindow(QMainWindow):
             ArchiveHealthWorkspace()
         )
 
+        #
+        # Wire signals
+        #
+
+        self.home_view.module_selected.connect(
+            self.open_workspace
+        )
+
         self.photos_workspace.home_requested.connect(
             self.show_home
         )
@@ -76,6 +86,10 @@ class MainWindow(QMainWindow):
         self.archive_health_workspace.home_requested.connect(
             self.show_home
         )
+
+        #
+        # Populate stack
+        #
 
         self.stack.addWidget(
             self.home_view
@@ -97,6 +111,12 @@ class MainWindow(QMainWindow):
             self.stack
         )
 
+        #
+        # Menu Bar
+        #
+
+        self._build_menu_bar()
+
         self.show_home()
 
         self.statusBar().showMessage(
@@ -104,7 +124,7 @@ class MainWindow(QMainWindow):
         )
 
     def _build_registry(
-        self,
+        self
     ) -> ModuleRegistry:
 
         registry = ModuleRegistry()
@@ -141,8 +161,140 @@ class MainWindow(QMainWindow):
 
         return registry
 
+    def _build_menu_bar(
+        self
+    ) -> None:
+        """
+        Build the application menu bar.
+        """
+
+        menu_bar = self.menuBar()
+
+        #
+        # File Menu
+        #
+
+        file_menu = menu_bar.addMenu(
+            "&File"
+        )
+
+        home_action = QAction(
+            "Home",
+            self
+        )
+
+        home_action.triggered.connect(
+            self.show_home
+        )
+
+        exit_action = QAction(
+            "Exit",
+            self
+        )
+
+        exit_action.triggered.connect(
+            self.close
+        )
+
+        file_menu.addAction(
+            home_action
+        )
+
+        file_menu.addSeparator()
+
+        file_menu.addAction(
+            exit_action
+        )
+
+        #
+        # Modules Menu
+        #
+
+        modules_menu = menu_bar.addMenu(
+            "&Modules"
+        )
+
+        photos_action = QAction(
+            "Photos",
+            self
+        )
+
+        photos_action.triggered.connect(
+            lambda: self.open_workspace(
+                "photos"
+            )
+        )
+
+        contacts_action = QAction(
+            "Contacts",
+            self
+        )
+
+        contacts_action.triggered.connect(
+            lambda: self.open_workspace(
+                "contacts"
+            )
+        )
+
+        health_action = QAction(
+            "Archive Health",
+            self
+        )
+
+        health_action.triggered.connect(
+            lambda: self.open_workspace(
+                "archive_health"
+            )
+        )
+
+        modules_menu.addAction(
+            photos_action
+        )
+
+        modules_menu.addAction(
+            contacts_action
+        )
+
+        modules_menu.addAction(
+            health_action
+        )
+
+        #
+        # Tools Menu
+        #
+
+        tools_menu = menu_bar.addMenu(
+            "&Tools"
+        )
+
+        settings_action = QAction(
+            "Settings",
+            self
+        )
+
+        tools_menu.addAction(
+            settings_action
+        )
+
+        #
+        # Help Menu
+        #
+
+        help_menu = menu_bar.addMenu(
+            "&Help"
+        )
+
+        about_action = QAction(
+            "About",
+            self
+        )
+
+        help_menu.addAction(
+            about_action
+        )
+
     def show_home(
-        self,
+        self
     ) -> None:
 
         self.stack.setCurrentWidget(
