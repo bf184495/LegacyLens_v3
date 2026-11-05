@@ -1,0 +1,5 @@
+- Folder selection workflow implemented
+- First functional Photos module operational
+- Exact duplicate detection migrated from V2
+- Duplicate reporting integrated into UI
+- End-to-end archive analysis working

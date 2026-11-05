@@ -132,7 +132,8 @@ class PhotosWorkspace(
                     f"Score: {report.score}\n"
                     f"Warnings: {report.warning_count}\n"
                     f"Errors: {report.error_count}\n"
-                    f"Critical: {report.critical_count}"
+                    f"Critical: {report.critical_count}\n\n"
+                    f"{report.summary}"
                 )
             )
 

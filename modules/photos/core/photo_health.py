@@ -176,3 +176,42 @@ class PhotoHealthAnalyzer:
             )
 
         return issues
+
+    def analyze_duplicates(
+        self,
+        duplicate_pairs,
+    ) -> list[HealthIssue]:
+        """"
+        Convert duplicate findings into
+        HealthIssue objects.
+        """
+
+        issues: list[HealthIssue] = []
+
+        for index, (
+            original,
+            duplicate,
+        ) in enumerate(
+            duplicate_pairs,
+            start=1
+        ):
+
+            issues.append(
+                HealthIssue(
+                    issue_id=(
+                        f"DUPLICATE-{index}"
+                    ),
+                    module="photos",
+                    severity=Severity.WARNING,
+                    category="duplicates",
+                    title="Exact Duplicate File",
+                    description=(
+                        f"Duplicate detected. "
+                        f"Original: {original}"
+                    ),
+                    item_id=duplicate,
+                    source_path=duplicate,
+                )
+            )
+            
+        return issues

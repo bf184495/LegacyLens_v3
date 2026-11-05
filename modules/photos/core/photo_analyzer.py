@@ -2,16 +2,6 @@
 photo_analyzer.py
 
 Photo analysis orchestration for LegacyLens V3.
-
-Pipeline:
-
-scan_folder()
-    ↓
-get_metadata()
-    ↓
-PhotoHealthAnalyzer()
-    ↓
-HealthIssue objects
 """
 
 from platform.archive_health import (
@@ -21,6 +11,7 @@ from platform.archive_health import (
 from .scanner import scan_folder
 from .metadata import get_metadata
 from .photo_health import PhotoHealthAnalyzer
+from .duplicates import find_exact_duplicates
 
 
 class PhotoAnalyzer:
@@ -55,6 +46,24 @@ class PhotoAnalyzer:
             folder_path
         )
 
+        #
+        # Duplicate scan
+        #
+
+        duplicate_pairs = (
+            find_exact_duplicates(
+                folder_path
+            )
+        )
+
+        duplicate_count = len(
+            duplicate_pairs
+        )
+
+        #
+        # Metadata / Health Scan
+        #
+
         for image_path in image_files:
 
             metadata = get_metadata(
@@ -80,6 +89,15 @@ class PhotoAnalyzer:
                     image_files
                 ),
             )
+        )
+
+        #
+        # Temporary duplicate reporting
+        #
+
+        report.summary = (
+            f"Exact duplicate pairs: "
+            f"{duplicate_count}"
         )
 
         return report
