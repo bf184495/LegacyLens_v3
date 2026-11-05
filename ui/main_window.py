@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
 
 from ui.home.home_view import HomeView
 
-from platform.module_registry import (
+from core.module_registry import (
     ModuleRegistry,
     ModuleManifest,
 )

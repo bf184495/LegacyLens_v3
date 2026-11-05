@@ -18,7 +18,7 @@ Scoring Range:
 0 = Severely Degraded
 """
 
-from platform.models import HealthIssue
+from core.models import HealthIssue
 from .severity import Severity
 
 

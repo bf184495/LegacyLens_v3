@@ -20,8 +20,8 @@ objects suitable for:
 
 from datetime import datetime
 
-from platform.models import HealthIssue
-from platform.models import HealthReport
+from core.models import HealthIssue
+from core.models import HealthReport
 
 from .issue_registry import IssueRegistry
 from .score import ArchiveHealthScore

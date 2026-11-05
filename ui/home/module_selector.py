@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (
     QPushButton,
 )
 
-from platform.module_registry import (
+from core.module_registry import (
     ModuleRegistry,
 )
 

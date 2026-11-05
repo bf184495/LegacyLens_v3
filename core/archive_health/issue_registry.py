@@ -27,7 +27,7 @@ Future consumers:
 
 from collections import defaultdict
 
-from platform.models import HealthIssue
+from core.models import HealthIssue
 
 
 class IssueRegistry:

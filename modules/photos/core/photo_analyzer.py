@@ -4,7 +4,7 @@ photo_analyzer.py
 Photo analysis orchestration for LegacyLens V3.
 """
 
-from platform.archive_health import (
+from core.archive_health import (
     ArchiveHealthEngine,
 )
 
@@ -12,6 +12,7 @@ from .scanner import scan_folder
 from .metadata import get_metadata
 from .photo_health import PhotoHealthAnalyzer
 from .duplicates import find_exact_duplicates
+from .duplicates_near import find_near_duplicates
 
 
 class PhotoAnalyzer:
@@ -47,7 +48,7 @@ class PhotoAnalyzer:
         )
 
         #
-        # Duplicate scan
+        # Exact duplicate scan
         #
 
         duplicate_pairs = (
@@ -59,6 +60,63 @@ class PhotoAnalyzer:
         duplicate_count = len(
             duplicate_pairs
         )
+
+        duplicate_issues = (
+            self.health_analyzer.analyze_duplicates(
+                duplicate_pairs
+            )
+        )
+
+        self.health_engine.add_issues(
+            duplicate_issues
+        )
+
+        #
+        # Near duplicate scan
+        #
+
+        near_duplicate_pairs = (
+            find_near_duplicates(
+                folder_path
+            )
+        )
+
+        near_duplicate_count = len(
+            near_duplicate_pairs
+        )
+
+        print()
+        print("=" * 60)
+        print("NEAR DUPLICATE RESULTS")
+        print("=" * 60)
+
+        if not near_duplicate_pairs:
+
+            print("No near duplicate pairs found.")
+
+        else:
+
+            for match in near_duplicate_pairs:
+
+                print()
+
+                print(
+                    f"Similarity: "
+                    f"{match['similarity']}%"
+                )
+
+                print(
+                    f"A: "
+                    f"{match['file_a']}"
+                )
+
+                print(
+                    f"B: "
+                    f"{match['file_b']}"
+                )
+
+        print("=" * 60)
+        print()
 
         #
         # Metadata / Health Scan
@@ -91,13 +149,11 @@ class PhotoAnalyzer:
             )
         )
 
-        #
-        # Temporary duplicate reporting
-        #
-
         report.summary = (
             f"Exact duplicate pairs: "
-            f"{duplicate_count}"
+            f"{duplicate_count}\n"
+            f"Near duplicate pairs: "
+            f"{near_duplicate_count}"
         )
 
         return report

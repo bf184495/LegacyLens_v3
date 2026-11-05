@@ -9,8 +9,8 @@ platform HealthIssue objects.
 
 from pathlib import Path
 
-from platform.models import HealthIssue
-from platform.archive_health import Severity
+from core.models import HealthIssue
+from core.archive_health import Severity
 
 
 class PhotoHealthAnalyzer:

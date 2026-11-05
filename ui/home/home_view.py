@@ -15,7 +15,7 @@ from PySide6.QtWidgets import (
     QLabel,
 )
 
-from platform.module_registry import (
+from core.module_registry import (
     ModuleRegistry,
 )
 
