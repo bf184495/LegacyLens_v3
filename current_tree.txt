@@ -1,0 +1,309 @@
+Folder PATH listing
+Volume serial number is DC46-EC88
+C:.
+¦   .gitignore
+¦   ARCHITECTURE.md
+¦   bootstrap_legacylens_v3.py
+¦   current_tree.txt
+¦   DECISIONS.md
+¦   main.py
+¦   README.md
+¦   ROADMAP.md
+¦   tree.txt
+¦   
++---.vscode
+¦       settings.json
+¦       
++---core
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---archive_health
+¦   ¦   ¦   engine.py
+¦   ¦   ¦   issue_registry.py
+¦   ¦   ¦   score.py
+¦   ¦   ¦   severity.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           engine.cpython-314.pyc
+¦   ¦           issue_registry.cpython-314.pyc
+¦   ¦           score.cpython-314.pyc
+¦   ¦           severity.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---models
+¦   ¦   ¦   archive_item.py
+¦   ¦   ¦   health_issue.py
+¦   ¦   ¦   health_report.py
+¦   ¦   ¦   module_info.py
+¦   ¦   ¦   relationship.py
+¦   ¦   ¦   scan_result.py
+¦   ¦   ¦   timeline_event.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           archive_item.cpython-314.pyc
+¦   ¦           health_issue.cpython-314.pyc
+¦   ¦           health_report.cpython-314.pyc
+¦   ¦           module_info.cpython-314.pyc
+¦   ¦           relationship.cpython-314.pyc
+¦   ¦           scan_result.cpython-314.pyc
+¦   ¦           timeline_event.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---module_registry
+¦   ¦   ¦   loader.py
+¦   ¦   ¦   manifest.py
+¦   ¦   ¦   registry.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           loader.cpython-314.pyc
+¦   ¦           manifest.cpython-314.pyc
+¦   ¦           registry.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---relationships
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---reporting
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---scoring
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---search
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---timelines
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---validation
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦           
++---data
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---cache
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---databases
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---exports
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---history
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---imports
+¦           __init__.py
+¦           
++---docs
+¦   ¦   KNOWN_ISSUES.md
+¦   ¦   
+¦   +---architecture
+¦   ¦       ARCHITECTURE.md
+¦   ¦       Archive_Intelligence_Vision.md
+¦   ¦       MODULES.md
+¦   ¦       PLATFORM.md
+¦   ¦       
+¦   +---decisions
+¦   ¦       ADR-0007-Archive-Intelligence.md
+¦   ¦       DECISIONS.md
+¦   ¦       
+¦   +---migration
+¦   ¦       PHOTOS_MIGRATION_PLAN.md
+¦   ¦       
+¦   +---references
+¦   +---research
+¦   ¦       Consumer_Interest_Poll.md
+¦   ¦       LegacyLens Consumer Interest & Digital Legacy Survey.gform
+¦   ¦       
+¦   +---roadmaps
+¦   ¦       image-1.png
+¦   ¦       image.png
+¦   ¦       ROADMAP.md
+¦   ¦       
+¦   +---sessions
+¦   ¦   ¦   2026-11-03_Platform_Foundation.md
+¦   ¦   ¦   2026-11-05_First Operational_v3_Module.md
+¦   ¦   ¦   2026-11-05_Near_Duplicate_Milestone.md
+¦   ¦   ¦   2026-11-05_Photos_Migration_Complete.md
+¦   ¦   ¦   2026-11-05_Post_Refactor
+¦   ¦   ¦   Resume_Prompt.md
+¦   ¦   ¦   
+¦   ¦   +---sceenshots
+¦   ¦           image.png
+¦   ¦           
+¦   +---whitepapers
+¦           LegacyLens_Concept.md
+¦           LegacyLens_V3_White_Paper.docx
+¦           LegacyLens_Vision.docx
+¦           
++---modules
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---calendar
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---reports
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---storage
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---ui
+¦   ¦           __init__.py
+¦   ¦           
+¦   +---contacts
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---reports
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---storage
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---ui
+¦   ¦           __init__.py
+¦   ¦           
+¦   +---documents
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---reports
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---storage
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---ui
+¦   ¦           __init__.py
+¦   ¦           
+¦   +---email
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---reports
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---storage
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---ui
+¦   ¦           __init__.py
+¦   ¦           
+¦   +---knowledge
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---reports
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---storage
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---ui
+¦   ¦           __init__.py
+¦   ¦           
+¦   +---photos
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---core
+¦   ¦   ¦   ¦   duplicates.py
+¦   ¦   ¦   ¦   duplicates_near.py
+¦   ¦   ¦   ¦   metadata.py
+¦   ¦   ¦   ¦   photo_analyzer.py
+¦   ¦   ¦   ¦   photo_health.py
+¦   ¦   ¦   ¦   scanner.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           duplicates.cpython-314.pyc
+¦   ¦   ¦           duplicates_near.cpython-314.pyc
+¦   ¦   ¦           metadata.cpython-314.pyc
+¦   ¦   ¦           photo_analyzer.cpython-314.pyc
+¦   ¦   ¦           photo_health.cpython-314.pyc
+¦   ¦   ¦           scanner.cpython-314.pyc
+¦   ¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦           
+¦   ¦   +---reports
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---storage
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---ui
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦           
++---reports
+¦       __init__.py
+¦       
++---resources
+¦       __init__.py
+¦       
++---ui
+    ¦   main_window.py
+    ¦   __init__.py
+    ¦   
+    +---common
+    ¦       __init__.py
+    ¦       
+    +---dialogs
+    ¦       __init__.py
+    ¦       
+    +---home
+    ¦   ¦   health_summary.py
+    ¦   ¦   home_view.py
+    ¦   ¦   module_selector.py
+    ¦   ¦   recent_activity.py
+    ¦   ¦   __init__.py
+    ¦   ¦   
+    ¦   +---__pycache__
+    ¦           home_view.cpython-314.pyc
+    ¦           module_selector.cpython-314.pyc
+    ¦           __init__.cpython-314.pyc
+    ¦           
+    +---themes
+    ¦       __init__.py
+    ¦       
+    +---workspaces
+    ¦   ¦   archive_health_workspace.py
+    ¦   ¦   base_workspace.py
+    ¦   ¦   contacts_workspace.py
+    ¦   ¦   photos_workspace.py
+    ¦   ¦   __init__.py
+    ¦   ¦   
+    ¦   +---__pycache__
+    ¦           archive_health_workspace.cpython-314.pyc
+    ¦           base_workspace.cpython-314.pyc
+    ¦           contacts_workspace.cpython-314.pyc
+    ¦           photos_workspace.cpython-314.pyc
+    ¦           __init__.cpython-314.pyc
+    ¦           
+    +---__pycache__
+            main_window.cpython-314.pyc
+            __init__.cpython-314.pyc
+            

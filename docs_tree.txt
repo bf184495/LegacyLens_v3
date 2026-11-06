@@ -1,0 +1,44 @@
+Folder PATH listing
+Volume serial number is DC46-EC88
+C:\DEV\LEGACYLENS_V3\DOCS
+¦   KNOWN_ISSUES.md
+¦   
++---architecture
+¦       ARCHITECTURE.md
+¦       Archive_Intelligence_Vision.md
+¦       MODULES.md
+¦       PLATFORM.md
+¦       
++---decisions
+¦       ADR-0007-Archive-Intelligence.md
+¦       DECISIONS.md
+¦       
++---migration
+¦       PHOTOS_MIGRATION_PLAN.md
+¦       
++---references
++---research
+¦       Consumer_Interest_Poll.md
+¦       LegacyLens Consumer Interest & Digital Legacy Survey.gform
+¦       
++---roadmaps
+¦       image-1.png
+¦       image.png
+¦       ROADMAP.md
+¦       
++---sessions
+¦   ¦   2026-11-03_Platform_Foundation.md
+¦   ¦   2026-11-05_First Operational_v3_Module.md
+¦   ¦   2026-11-05_Near_Duplicate_Milestone.md
+¦   ¦   2026-11-05_Photos_Migration_Complete.md
+¦   ¦   2026-11-05_Post_Refactor
+¦   ¦   Resume_Prompt.md
+¦   ¦   
+¦   +---sceenshots
+¦           image.png
+¦           
++---whitepapers
+        LegacyLens_Concept.md
+        LegacyLens_V3_White_Paper.docx
+        LegacyLens_Vision.docx
+        
