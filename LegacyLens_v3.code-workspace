@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../LegacyLens"
+		}
+	],
+	"settings": {
+		"editor.inlineSuggest.enabled": false
+	}
+}
