@@ -1,15 +1,22 @@
 """
 photo_analyzer.py
 
-Photo analysis orchestration for LegacyLens V3.
+Photo analysis orchestration
+for LegacyLens V3.
 """
 
 from core.archive_health import (
     ArchiveHealthEngine,
 )
+
 from modules.photos.classification.classifier_engine import (
     ClassificationEngine
 )
+
+from modules.photos.classification.validator import (
+    ClassificationValidator
+)
+
 from .scanner import scan_folder
 from .metadata import get_metadata
 from .photo_health import PhotoHealthAnalyzer
@@ -19,13 +26,17 @@ from .duplicates_near import find_near_duplicates
 
 class PhotoAnalyzer:
     """
-    Orchestrates photo analysis for V3.
+    Orchestrates photo analysis.
     """
 
     def __init__(self):
 
         self.classifier = (
             ClassificationEngine()
+        )
+
+        self.validator = (
+            ClassificationValidator()
         )
 
         self.health_engine = (
@@ -40,12 +51,6 @@ class PhotoAnalyzer:
         self,
         folder_path: str,
     ):
-        """
-        Analyze an entire folder.
-
-        Returns:
-            HealthReport
-        """
 
         self.health_engine.clear()
 
@@ -98,7 +103,9 @@ class PhotoAnalyzer:
 
         if not near_duplicate_pairs:
 
-            print("No near duplicate pairs found.")
+            print(
+                "No near duplicate pairs found."
+            )
 
         else:
 
@@ -125,8 +132,12 @@ class PhotoAnalyzer:
         print()
 
         #
-        # Metadata / Health Scan
+        # Classification
+        # Validation
+        # Archive Health
         #
+
+        validation_count = 0
 
         for image_path in image_files:
 
@@ -140,24 +151,45 @@ class PhotoAnalyzer:
                 )
             )
 
-            print(
-                f"{image_path} -> "
-                f"{classification.root_category} / "
-                f"{classification.subcategory} "
-                f"({classification.confidence}%)"
-            )
-
-            metadata["root_category"] = (
+            metadata[
+                "root_category"
+            ] = (
                 classification.root_category
             )
 
-            metadata["subcategory"] = (
+            metadata[
+                "subcategory"
+            ] = (
                 classification.subcategory
             )
 
-            metadata["classification_confidence"] = (
+            metadata[
+                "classification_confidence"
+            ] = (
                 classification.confidence
             )
+
+            needs_validation = (
+                self.validator.should_validate(
+                    classification
+                )
+            )
+
+            metadata[
+                "needs_validation"
+            ] = needs_validation
+
+            if needs_validation:
+
+                validation_count += 1
+
+                metadata[
+                    "validation_reason"
+                ] = (
+                    self.validator.validation_reason(
+                        classification
+                    )
+                )
 
             issues = (
                 self.health_analyzer.analyze(
@@ -184,7 +216,9 @@ class PhotoAnalyzer:
             f"Exact duplicate pairs: "
             f"{duplicate_count}\n"
             f"Near duplicate pairs: "
-            f"{near_duplicate_count}"
+            f"{near_duplicate_count}\n"
+            f"Validation Queue: "
+            f"{validation_count}"
         )
 
         return report
