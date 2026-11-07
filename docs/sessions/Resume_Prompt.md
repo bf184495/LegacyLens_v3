@@ -1,368 +1,89 @@
-# LegacyLens V3 Resume Prompt
-
-Current Phase:
-Photos Migration
-
-Platform Status:
-
-✅ Platform Foundation Complete
-
-✅ Application Shell Complete
-
-✅ Navigation Framework Complete
-
-✅ Archive Health Framework Complete
-
-✅ First Functional V3 Module Operational
-
-Major Accomplishments:
-
-- Built shared platform architecture
-- Created Archive Health platform service
-- Implemented Module Registry
-- Implemented Home View
-- Implemented workspace navigation with QStackedWidget
-- Added application Menu Bar
-- Created Photos Workspace
-- Migrated scanner.py from V2
-- Migrated metadata.py from V2
-- Created photo_health.py
-- Created photo_analyzer.py
-- Generated first successful V3 Archive Health report
-
-Current Photos Workflow:
-
-Folder
-↓
-Scanner
-↓
-Metadata Extraction
-↓
-Photo Health Analysis
-↓
-Archive Health Report
-↓
-Photos Workspace Display
-
-Current Analysis Result:
-
-Successfully analyzed a test photo archive and displayed Archive Health statistics within the V3 Photos workspace.
-
-Next Development Task:
-
-Replace hardcoded TEST_FOLDER with a Folder Selection Dialog.
-
-Future Photos Migration Tasks:
-
-- Duplicate Detection Migration
-- Near Duplicate Detection Migration
-- Classification Migration
-- Dashboard Migration
-- Reporting Migration
-
-Long-Term Vision:
-
-LegacyLens V3 is a Digital Legacy Operating System.
-
-The long-term objective is to build Archive Intelligence capable of:
-
-- Metadata restoration recommendations
-- Event reconstruction
-- Timeline reconstruction
-- Cross-module relationship discovery
-- Digital preservation guidance
-- Historical narrative generation
-
-Ultimate Goal:
-
-Help users understand, preserve, improve, organize, and transfer their digital legacy.
-
-Latest Accomplishments:
-
-- Integrated exact duplicate detection
-- Integrated near duplicate detection
-- Resolved platform namespace collision
-- Renamed platform/ to core/
-- Verified imagehash operation
-- Successfully detected visual duplicate photo groups
-
-Current Photos Capabilities:
-
-- Scanner
-- Metadata Extraction
-- Archive Health
-- Exact Duplicate Detection
-- Near Duplicate Detection
-
-Current Next Step:
-
-Convert duplicate analysis into Archive Health Issues and scoring.
-
-Latest Milestone:
-
-Photos Migration Phase 4D Complete
-
-Completed:
-
-- Exact Duplicate Detection Migration
-- Near Duplicate Detection Migration
-- Duplicate Reporting Integration
-- Core namespace refactor
-- ImageHash integration
-
-Current Photos Capabilities:
-
-- Scanner
-- Metadata Extraction
-- Archive Health
-- Exact Duplicate Detection
-- Near Duplicate Detection
-
-Latest Test Results:
-
-Items: 9
-Exact Duplicate Pairs: 1
-Near Duplicate Pairs: 4
-
-Status:
-
-Photos module is now capable of identifying both exact and perceptually similar images.
-
-# Session Summary
-
-Date: 2026-11-03
-
-## Photos Migration Phase 4D Complete
-
-Completed:
-
-- Folder selection workflow
-- Live archive analysis
-- Exact duplicate detection migration
-- Near duplicate detection migration
-- Duplicate reporting integration
-- Photo Health integration
-- Archive Health integration
-
-## Significant Architectural Changes
-
-- Renamed platform/ to core/
-- Resolved Python standard library namespace collision
-- Restored imagehash compatibility
-
-## Validation Results
-
-Test Archive:
-
-Items: 9
-
-Exact Duplicate Pairs: 1
-
-Near Duplicate Pairs: 4
-
-Verified perceptual hash generation and near-duplicate similarity detection.
-
-## Business & Product Discovery
-
-- Digital Legacy Management identified as potential market category.
-- Archive Intelligence identified as a core strategic platform objective.
-- Universal Person Profile concept refined.
-- Legacy Librarian AI vision expanded.
-
-## Next Candidates
-
-1. HEIC Support Investigation
-2. Classifier Migration
-3. Validation/Reclassification Workflow
-4. Contacts Module
-5. Person-Centric Search
-6. Archive Intelligence Layer
-
-# LegacyLens Resume Prompt
-
-Date: 2026-11-06
-
-## Session Summary
-
-This session began as a continuation of Photos Module migration work and evolved into one of the most significant product-definition sessions in LegacyLens history.
-
-## Technical Accomplishments
-
-### Photos Module
-
-Completed:
-
-- Folder selection workflow
-- Live archive analysis
+LEGACYLENS V3 RESUME PROMPT
+
+Current Status
+--------------
+LegacyLens has successfully transitioned from a photo-analysis tool into a classification and validation platform.
+
+Completed Systems
+-----------------
+- Folder scanning
+- Metadata extraction
+- Archive Health analysis
 - Exact duplicate detection
 - Near duplicate detection
-- Duplicate reporting integration
-- Photo Health integration
-- Archive Health integration
+- Classification taxonomy
+- ClassificationResult model
+- Plugin architecture
+- Photo plugin
+- Graphics plugin
+- Screenshot plugin
+- Document plugin
+- Internet Content plugin
+- Adult Content plugin
+- Archive Asset plugin
+- Classification Engine
+- Validation Engine
+- Validation Queue reporting
 
-Validation Results:
+Recent Milestone
+----------------
+Classification and validation have been integrated into PhotoAnalyzer.
 
-- Exact Duplicates Detected: 1
-- Near Duplicates Detected: 4
+Current analysis flow:
 
-### Architecture
+Scanner
+-> Metadata
+-> Classification Engine
+-> Validator
+-> Archive Health
+-> Report
 
-Completed:
+Validation results now appear in report summaries.
 
-- platform/ namespace eliminated
-- core/ namespace established
-- imagehash compatibility restored
-- future stdlib conflicts avoided
+Current Test Results
+--------------------
+Original camera photos classify at approximately 95-100%.
 
----
+Facebook images classify at approximately 45%.
 
-## Intellectual Property Binder
+Downloaded/mobile-only images classify at approximately 35%.
 
-### Volume 1 Complete
+Validator correctly queues low-confidence items for review.
 
-Core Concepts
+Next Priority
+-------------
+Build Validation Record support and Validation Report visibility.
 
-- Personal Archive Intelligence
-- Universal Person Profile
-- Connected Legacies
-- Legacy Passport
-- Consent-First Legacy Networking
+Goal:
 
-### Volume 2 Complete
+Instead of:
 
-Intelligence Layer
+Validation Queue: 27
 
-- Legacy Librarian
-- Historical Reconstruction Engine
-- Archive Intelligence
+Display:
 
-### Volume 3 Complete
+File Name
+Category
+Confidence
+Validation Reason
 
-Business & Strategy
+for all queued items.
 
-- Category Definition
-- Revenue Model & Growth
-- Investor Thesis
+Suggested Implementation Order
+------------------------------
+1. ValidationRecord model
+2. Validation queue collection
+3. Validation report generation
+4. Dashboard integration
+5. User review workflow
+6. Feedback-driven classifier improvements
 
-### Volume 4 Structure Defined
+Git Status
+----------
+Photo_Test_Folder_Removable successfully removed from repository history using git-filter-repo.
 
-Historical Record & Vision
+Repository history was rewritten and force-pushed.
 
-- Innovation Timeline
-- Invention Log
-- Founder Thesis
-- Connected Legacies Vision
-
----
-
-## Major Concept Discoveries
-
-### Universal Person Profile
-
-Users think in terms of:
-
-- people
-- relationships
-- stories
-- events
-
-not files.
-
-A person-centric archive model was defined.
-
----
-
-### Connected Legacies
-
-Core Discovery:
-
-A person's life is not isolated.
-
-A person's digital legacy is connected to:
-
-- family
-- friends
-- communities
-- organizations
-- shared experiences
-
-Connected Legacies allows permission-controlled relationships between archives while preserving ownership and privacy.
-
----
-
-### Founder Thesis
-
-Core Statement:
-
-A person's digital legacy is not merely a collection of files.
-
-It is a collection of relationships, experiences, memories, and intersections between lives.
-
----
-
-## Revenue Model
-
-Archive Intelligence:
-
-One-Time Purchase
-
-Connected Legacies:
-
-Subscription-Based Service
-
-Potential rationale:
-
-- identity services
-- networking infrastructure
-- consent management
-- relationship graph storage
-
----
-
-## Priorities For Next Session
-
-1. Complete Volume 4 DOCX artifact generation
-2. Create binder README
-3. Create local document hyperlinks
-4. Update binder table of contents
-5. Generate LegacyLens_IP_Binder_v1.zip
-6. HEIC support investigation
-7. Classifier design workshop
-8. Universal Person Profile architecture
-9. Legacy Passport technical design
-
----
-
-## Most Important Discovery
-
-Archive Management
-↓
-Archive Health
-↓
-Archive Intelligence
-↓
-Universal Person Profile
-↓
-Connected Legacies
-
-This sequence appears to represent the long-term evolution path of LegacyLens.
-
-Files are not the goal.
-
-Understanding is the goal.
-
-CRITICAL CONTEXT
-
-The Connected Legacies concept was discovered.
-
-Connected Legacies does not replace Archive Intelligence.
-
-Connected Legacies extends Archive Intelligence by
-allowing permission-controlled relationships between
-independent digital archives.
-
-Archive Intelligence remains the core mission.
-
-The platform continues to focus on helping users
-understand, preserve, organize, and transfer their
-digital legacy.
+Future reminder:
+Never commit photo test folders.
+Always verify .gitignore before pushing test datasets.
