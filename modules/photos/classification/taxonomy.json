@@ -6,14 +6,10 @@
     "Group Photo": {},
     "Event Photo": {},
     "Travel Photo": {},
-    "Pet Photo": {}
-  },
-
-  "Screenshots": {
-    "Desktop Screenshot": {},
-    "Mobile Screenshot": {},
-    "Website Screenshot": {},
-    "Application Screenshot": {}
+    "Pet Photo": {},
+    "Legacy Artifact": {},
+    "Photo of Document": {},
+    "Photo of Object": {}
   },
 
   "Documents": {
@@ -22,7 +18,20 @@
     "Receipt": {},
     "Letter": {},
     "Form": {},
-    "Business Document": {}
+    "Business Document": {},
+    "Identification Document": {},
+    "Handwritten Note": {},
+    "Book Page": {},
+    "Newspaper Clipping": {}
+  },
+
+  "Screenshots": {
+    "Desktop Screenshot": {},
+    "Mobile Screenshot": {},
+    "Website Screenshot": {},
+    "Application Screenshot": {},
+    "Conversation Screenshot": {},
+    "Social Media Screenshot": {}
   },
 
   "Illustrations": {
@@ -30,17 +39,33 @@
     "Illustration": {},
     "Coloring Page": {},
     "Cartoon": {},
-    "Meme": {},
+    "Painting": {},
+    "Sketch": {},
     "AI Generated Artwork": {}
+  },
+
+  "Internet Content": {
+    "Meme": {},
+    "Reaction Image": {},
+    "Wallpaper": {},
+    "Social Media Image": {},
+    "Web Comic": {},
+    "Downloaded Image": {},
+    "Animated Image": {},
+    "Internet Graphic": {}
   },
 
   "Technical Graphics": {
     "Program Graphic": {},
     "QR Code": {},
     "Barcode": {},
-    "UI Asset": {},
     "Diagram": {},
-    "Chart": {}
+    "Chart": {},
+    "Flowchart": {},
+    "UI Asset": {},
+    "Logo": {},
+    "Icon": {},
+    "Infographic": {}
   },
 
   "Adult Content": {
@@ -49,10 +74,22 @@
     "Uncertain": {}
   },
 
+  "Archive Assets": {
+    "Duplicate": {},
+    "Near Duplicate": {},
+    "Edited Version": {},
+    "Thumbnail": {},
+    "Backup Copy": {},
+    "Derived Asset": {}
+  },
+
   "Needs Review": {
     "Uncertain": {},
     "Low Confidence": {},
     "Multiple Matches": {},
-    "Manual Review Requested": {}
+    "Manual Review Requested": {},
+    "Unknown Content": {},
+    "Unreadable File": {},
+    "Corrupted File": {}
   }
 }

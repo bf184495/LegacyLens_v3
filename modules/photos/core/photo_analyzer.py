@@ -7,7 +7,9 @@ Photo analysis orchestration for LegacyLens V3.
 from core.archive_health import (
     ArchiveHealthEngine,
 )
-
+from modules.photos.classification.classifier_engine import (
+    ClassificationEngine
+)
 from .scanner import scan_folder
 from .metadata import get_metadata
 from .photo_health import PhotoHealthAnalyzer
@@ -21,6 +23,10 @@ class PhotoAnalyzer:
     """
 
     def __init__(self):
+
+        self.classifier = (
+            ClassificationEngine()
+        )
 
         self.health_engine = (
             ArchiveHealthEngine()
@@ -126,6 +132,31 @@ class PhotoAnalyzer:
 
             metadata = get_metadata(
                 image_path
+            )
+
+            classification = (
+                self.classifier.classify(
+                    metadata
+                )
+            )
+
+            print(
+                f"{image_path} -> "
+                f"{classification.root_category} / "
+                f"{classification.subcategory} "
+                f"({classification.confidence}%)"
+            )
+
+            metadata["root_category"] = (
+                classification.root_category
+            )
+
+            metadata["subcategory"] = (
+                classification.subcategory
+            )
+
+            metadata["classification_confidence"] = (
+                classification.confidence
             )
 
             issues = (
