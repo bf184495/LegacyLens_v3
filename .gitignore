@@ -57,6 +57,7 @@ ENV/
 .coverage
 .coverage.*
 htmlcov/
+Photo_Test_Folder_Removable/
 
 ###############################################################################
 # Linting / Type Checking
