@@ -169,6 +169,14 @@ user_settings.json
 local_settings.json
 
 ###############################################################################
+# User Classification Overrides
+###############################################################################
+
+data/classification/custom_taxonomy.json
+data/classification/*
+!data/classification/.gitkeep
+
+###############################################################################
 # Environment Variables / Secrets
 ###############################################################################
 
@@ -200,7 +208,9 @@ docs/_build/
 # Machine Learning / AI Models
 ###############################################################################
 
-models/
+data/models/
+runtime_models/
+ai_models/
 checkpoints/
 
 *.pt

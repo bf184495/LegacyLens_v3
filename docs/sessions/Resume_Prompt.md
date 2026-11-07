@@ -350,3 +350,19 @@ This sequence appears to represent the long-term evolution path of LegacyLens.
 Files are not the goal.
 
 Understanding is the goal.
+
+CRITICAL CONTEXT
+
+The Connected Legacies concept was discovered.
+
+Connected Legacies does not replace Archive Intelligence.
+
+Connected Legacies extends Archive Intelligence by
+allowing permission-controlled relationships between
+independent digital archives.
+
+Archive Intelligence remains the core mission.
+
+The platform continues to focus on helping users
+understand, preserve, organize, and transfer their
+digital legacy.

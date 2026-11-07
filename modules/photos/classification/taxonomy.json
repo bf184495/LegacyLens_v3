@@ -1,0 +1,58 @@
+{
+  "Photography": {
+    "Personal Photo": {},
+    "Likely Personal Photo": {},
+    "Historic Family Photo": {},
+    "Group Photo": {},
+    "Event Photo": {},
+    "Travel Photo": {},
+    "Pet Photo": {}
+  },
+
+  "Screenshots": {
+    "Desktop Screenshot": {},
+    "Mobile Screenshot": {},
+    "Website Screenshot": {},
+    "Application Screenshot": {}
+  },
+
+  "Documents": {
+    "Scanned Document": {},
+    "Certificate": {},
+    "Receipt": {},
+    "Letter": {},
+    "Form": {},
+    "Business Document": {}
+  },
+
+  "Illustrations": {
+    "Artwork": {},
+    "Illustration": {},
+    "Coloring Page": {},
+    "Cartoon": {},
+    "Meme": {},
+    "AI Generated Artwork": {}
+  },
+
+  "Technical Graphics": {
+    "Program Graphic": {},
+    "QR Code": {},
+    "Barcode": {},
+    "UI Asset": {},
+    "Diagram": {},
+    "Chart": {}
+  },
+
+  "Adult Content": {
+    "Personal": {},
+    "Downloaded": {},
+    "Uncertain": {}
+  },
+
+  "Needs Review": {
+    "Uncertain": {},
+    "Low Confidence": {},
+    "Multiple Matches": {},
+    "Manual Review Requested": {}
+  }
+}
