@@ -4,16 +4,54 @@ C:.
 ¦   .gitignore
 ¦   ARCHITECTURE.md
 ¦   bootstrap_legacylens_v3.py
-¦   current_tree.txt
 ¦   DECISIONS.md
+¦   LegacyLens_v3.code-workspace
 ¦   main.py
 ¦   README.md
 ¦   ROADMAP.md
-¦   tree.txt
 ¦   
 +---.vscode
 ¦       settings.json
 ¦       
++---archive_graph
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---builders
+¦   ¦       graph_builder.py
+¦   ¦       
+¦   +---models
+¦   ¦       collection.py
+¦   ¦       discovery.py
+¦   ¦       duplicate_group.py
+¦   ¦       event.py
+¦   ¦       location.py
+¦   ¦       person.py
+¦   ¦       photo.py
+¦   ¦       story.py
+¦   ¦       task.py
+¦   ¦       validation.py
+¦   ¦       
+¦   +---queries
+¦   ¦       explorer_queries.py
+¦   ¦       people_queries.py
+¦   ¦       story_queries.py
+¦   ¦       workbench_queries.py
+¦   ¦       
+¦   +---schema
+¦   ¦       archive_graph.schema.json
+¦   ¦       edge_types.json
+¦   ¦       node_types.json
+¦   ¦       
+¦   +---services
+¦   ¦       discovery_service.[y
+¦   ¦       graph_service.py
+¦   ¦       recommendation_service.py
+¦   ¦       
+¦   +---views
+¦           explorer_view.py
+¦           timeline_view.py
+¦           workbench_view.py
+¦           
 +---core
 ¦   ¦   __init__.py
 ¦   ¦   
@@ -33,22 +71,26 @@ C:.
 ¦   ¦           
 ¦   +---models
 ¦   ¦   ¦   archive_item.py
+¦   ¦   ¦   classification_result.py
 ¦   ¦   ¦   health_issue.py
 ¦   ¦   ¦   health_report.py
 ¦   ¦   ¦   module_info.py
 ¦   ¦   ¦   relationship.py
 ¦   ¦   ¦   scan_result.py
 ¦   ¦   ¦   timeline_event.py
+¦   ¦   ¦   validation_record.py
 ¦   ¦   ¦   __init__.py
 ¦   ¦   ¦   
 ¦   ¦   +---__pycache__
 ¦   ¦           archive_item.cpython-314.pyc
+¦   ¦           classification_result.cpython-314.pyc
 ¦   ¦           health_issue.cpython-314.pyc
 ¦   ¦           health_report.cpython-314.pyc
 ¦   ¦           module_info.cpython-314.pyc
 ¦   ¦           relationship.cpython-314.pyc
 ¦   ¦           scan_result.cpython-314.pyc
 ¦   ¦           timeline_event.cpython-314.pyc
+¦   ¦           validation_record.cpython-314.pyc
 ¦   ¦           __init__.cpython-314.pyc
 ¦   ¦           
 ¦   +---module_registry
@@ -79,8 +121,18 @@ C:.
 ¦   ¦       __init__.py
 ¦   ¦       
 ¦   +---validation
-¦   ¦       __init__.py
-¦   ¦       
+¦   ¦   ¦   validation_exporter.py
+¦   ¦   ¦   validation_queue.py
+¦   ¦   ¦   validation_record_builder.py
+¦   ¦   ¦   validation_statistics.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           validation_exporter.cpython-314.pyc
+¦   ¦           validation_queue.cpython-314.pyc
+¦   ¦           validation_record_builder.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦           
 ¦   +---__pycache__
 ¦           __init__.cpython-314.pyc
 ¦           
@@ -89,6 +141,13 @@ C:.
 ¦   ¦   
 ¦   +---cache
 ¦   ¦       __init__.py
+¦   ¦       
+¦   +---classification
+¦   ¦       .gitkeep
+¦   ¦       custom_taxonomy.json
+¦   ¦       
+¦   +---config
+¦   ¦       validation_config.json
 ¦   ¦       
 ¦   +---databases
 ¦   ¦       __init__.py
@@ -100,8 +159,17 @@ C:.
 ¦   ¦       __init__.py
 ¦   ¦       
 ¦   +---imports
-¦           __init__.py
-¦           
+¦   ¦       __init__.py
+¦   ¦       
+¦   +---validation
+¦       ¦   validation_queue.json
+¦       ¦   validation_stats.json
+¦       ¦   
+¦       +---history
+¦               validation_queue_20261108_215419.json
+¦               validation_queue_20261108_222644.json
+¦               validation_queue_20261108_223041.json
+¦               
 +---docs
 ¦   ¦   KNOWN_ISSUES.md
 ¦   ¦   
@@ -111,6 +179,37 @@ C:.
 ¦   ¦       MODULES.md
 ¦   ¦       PLATFORM.md
 ¦   ¦       
+¦   +---binder
+¦   ¦   ¦   Binder_ToC.docx
+¦   ¦   ¦   README.md
+¦   ¦   ¦   
+¦   ¦   +---assets
+¦   ¦   ¦       binder_cover.png
+¦   ¦   ¦       
+¦   ¦   +---LegacyLens Binder Volume 1
+¦   ¦   ¦       01_Personal_Archive_Intelligence.docx
+¦   ¦   ¦       02_Universal_Person_Profile.docx
+¦   ¦   ¦       03_Connected_Legacies.docx
+¦   ¦   ¦       04_Legacy_Passport.docx
+¦   ¦   ¦       05_Consent_First_Legacy_Networking.docx
+¦   ¦   ¦       
+¦   ¦   +---LegacyLens Binder Volume 2
+¦   ¦   ¦       06_Legacy_Librarian.docx
+¦   ¦   ¦       07_Historical_Reconstruction_Engine.docx
+¦   ¦   ¦       08_Archive_Intelligence.docx
+¦   ¦   ¦       
+¦   ¦   +---LegacyLens Binder Volume 3
+¦   ¦   ¦       09_Category_Definition.docx
+¦   ¦   ¦       10_Revenue_Model_and_Growth.docx
+¦   ¦   ¦       11_Investor_Thesis.docx
+¦   ¦   ¦       
+¦   ¦   +---LegacyLens Binder Volume 4
+¦   ¦           12_Innovation_Timeline.docx
+¦   ¦           13_Invention_Log.docx
+¦   ¦           14_Founder_Thesis.docx
+¦   ¦           15_Connected_Legacies_Vision.docx
+¦   ¦           
+¦   +---concepts
 ¦   +---decisions
 ¦   ¦       ADR-0007-Archive-Intelligence.md
 ¦   ¦       DECISIONS.md
@@ -118,7 +217,12 @@ C:.
 ¦   +---migration
 ¦   ¦       PHOTOS_MIGRATION_PLAN.md
 ¦   ¦       
-¦   +---references
+¦   +---reference
+¦   ¦       current_tree.txt
+¦   ¦       docs_tree.txt
+¦   ¦       python_inventory.txt
+¦   ¦       tree.txt
+¦   ¦       
 ¦   +---research
 ¦   ¦       Consumer_Interest_Poll.md
 ¦   ¦       LegacyLens Consumer Interest & Digital Legacy Survey.gform
@@ -136,7 +240,7 @@ C:.
 ¦   ¦   ¦   2026-11-05_Post_Refactor
 ¦   ¦   ¦   Resume_Prompt.md
 ¦   ¦   ¦   
-¦   ¦   +---sceenshots
+¦   ¦   +---screenshots
 ¦   ¦           image.png
 ¦   ¦           
 ¦   +---whitepapers
@@ -225,6 +329,38 @@ C:.
 ¦   +---photos
 ¦   ¦   ¦   __init__.py
 ¦   ¦   ¦   
+¦   ¦   +---classification
+¦   ¦   ¦   ¦   classifier_engine.py
+¦   ¦   ¦   ¦   taxonomy.json
+¦   ¦   ¦   ¦   taxonomy.py
+¦   ¦   ¦   ¦   validator.py
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +---plugins
+¦   ¦   ¦   ¦   ¦   adult_content_plugin.py
+¦   ¦   ¦   ¦   ¦   archive_asset_plugin.py
+¦   ¦   ¦   ¦   ¦   base_plugin.py
+¦   ¦   ¦   ¦   ¦   document_plugin.py
+¦   ¦   ¦   ¦   ¦   graphics_plugin.py
+¦   ¦   ¦   ¦   ¦   internet_content_plugin.py
+¦   ¦   ¦   ¦   ¦   photo_plugin.py
+¦   ¦   ¦   ¦   ¦   screenshot_plugin.py
+¦   ¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   ¦   
+¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦           adult_content_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           archive_asset_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           base_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           document_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           graphics_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           internet_content_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           photo_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           screenshot_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦   ¦           
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           classifier_engine.cpython-314.pyc
+¦   ¦   ¦           validator.cpython-314.pyc
+¦   ¦   ¦           
 ¦   ¦   +---core
 ¦   ¦   ¦   ¦   duplicates.py
 ¦   ¦   ¦   ¦   duplicates_near.py
@@ -258,12 +394,77 @@ C:.
 ¦   +---__pycache__
 ¦           __init__.cpython-314.pyc
 ¦           
++---Photo_Test_Folder_Removable
+¦       20250130_192900_1.jpg
+¦       20250130_192920.jpg
+¦       20250130_192920_1.jpg
+¦       20250131_014313.jpg
+¦       20250131_014313_1.jpg
+¦       20250131_014326.jpg
+¦       20250131_014326_1.jpg
+¦       20250131_014338.jpg
+¦       20250131_014338_1.jpg
+¦       20250203_020333.jpg
+¦       20250203_020333_1.jpg
+¦       20250203_020347.jpg
+¦       20250203_020347_1.jpg
+¦       20250203_105728.jpg
+¦       20250203_105728_1.jpg
+¦       20250203_105742.jpg
+¦       20250203_105742_1.jpg
+¦       20250203_115957.jpg
+¦       20250203_115957_1.jpg
+¦       20250203_120007.jpg
+¦       20250203_120007_1.jpg
+¦       20250203_154328.jpg
+¦       20250203_154328_1.jpg
+¦       20250203_154344.jpg
+¦       20250203_154344_1.jpg
+¦       20250612_225353.jpg
+¦       20250612_225353_1.jpg
+¦       20250612_225357.jpg
+¦       20250612_225357_1.jpg
+¦       FB_IMG_1673134524462.jpg
+¦       FB_IMG_1673134524462_1.jpg
+¦       FB_IMG_1716825598209.jpg
+¦       FB_IMG_1717959401318.jpg
+¦       FB_IMG_1717959406207.jpg
+¦       FB_IMG_1717959474014.jpg
+¦       FB_IMG_1717959537801.jpg
+¦       FB_IMG_1721280562172.jpg
+¦       FB_IMG_1729552383972.jpg
+¦       FB_IMG_1730803033525.jpg
+¦       FB_IMG_1742364563442.jpg
+¦       FB_IMG_1742364574408.jpg
+¦       FB_IMG_1742364580533.jpg
+¦       FB_IMG_1742364867794.jpg
+¦       FB_IMG_1742685051991.jpg
+¦       FB_IMG_1742685058163.jpg
+¦       FB_IMG_1751311647110.jpg
+¦       FB_IMG_1751917387045.jpg
+¦       IMG_20240527_143040.jpg
+¦       IMG_20240527_143050.jpg
+¦       IMG_20240527_143053.jpg
+¦       IMG_20240527_143054.jpg
+¦       IMG_20240527_143058.jpg
+¦       IMG_20240527_143104.jpg
+¦       IMG_20240527_143106.jpg
+¦       IMG_20240527_143110.jpg
+¦       
 +---reports
+¦       validation_report.html
 ¦       __init__.py
 ¦       
 +---resources
 ¦       __init__.py
 ¦       
++---tests
+¦   +---classification
+¦           test_classifier_engine.py
+¦           test_graphics_plugin.py
+¦           test_photo_plugin.py
+¦           test_screenshot_plugin.py
+¦           
 +---ui
     ¦   main_window.py
     ¦   __init__.py

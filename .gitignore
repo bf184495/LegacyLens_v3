@@ -59,6 +59,12 @@ ENV/
 htmlcov/
 Photo_Test_Folder_Removable/
 
+# Archive Graph runtime data
+data/databases/*.json
+
+# Test outputs
+graph_test.json
+
 ###############################################################################
 # Linting / Type Checking
 ###############################################################################

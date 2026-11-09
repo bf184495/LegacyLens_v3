@@ -9,6 +9,18 @@ from core.archive_health import (
     ArchiveHealthEngine,
 )
 
+from core.validation.validation_queue import (
+    ValidationQueue
+)
+
+from core.validation.validation_record_builder import (
+    ValidationRecordBuilder
+)
+
+from core.validation.validation_exporter import (
+    ValidationExporter
+)
+
 from modules.photos.classification.classifier_engine import (
     ClassificationEngine
 )
@@ -39,6 +51,14 @@ class PhotoAnalyzer:
             ClassificationValidator()
         )
 
+        self.validation_queue = (
+            ValidationQueue()
+        )
+
+        self.validation_exporter = (
+            ValidationExporter()
+        )
+
         self.health_engine = (
             ArchiveHealthEngine()
         )
@@ -54,12 +74,14 @@ class PhotoAnalyzer:
 
         self.health_engine.clear()
 
+        self.validation_queue.clear()
+
         image_files = scan_folder(
             folder_path
         )
 
         #
-        # Exact duplicate scan
+        # Exact duplicates
         #
 
         duplicate_pairs = (
@@ -83,7 +105,7 @@ class PhotoAnalyzer:
         )
 
         #
-        # Near duplicate scan
+        # Near duplicates
         #
 
         near_duplicate_pairs = (
@@ -145,6 +167,10 @@ class PhotoAnalyzer:
                 image_path
             )
 
+            #
+            # Classification
+            #
+
             classification = (
                 self.classifier.classify(
                     metadata
@@ -169,27 +195,67 @@ class PhotoAnalyzer:
                 classification.confidence
             )
 
-            needs_validation = (
-                self.validator.should_validate(
+            #
+            # Validation
+            #
+            # IMPORTANT:
+            # validation_reason() is called
+            # exactly once.
+            #
+
+            validation_reason = (
+                self.validator.validation_reason(
                     classification
                 )
             )
 
-            metadata[
-                "needs_validation"
-            ] = needs_validation
+            #
+            # Safety guard
+            #
+
+            if (
+                validation_reason is None
+                or not str(
+                    validation_reason
+                ).strip()
+            ):
+
+                validation_reason = (
+                    "unknown"
+                )
+
+            needs_validation = (
+                validation_reason
+                != "none"
+            )
 
             if needs_validation:
 
                 validation_count += 1
 
-                metadata[
-                    "validation_reason"
-                ] = (
-                    self.validator.validation_reason(
-                        classification
-                    )
-                )
+            #
+            # Validation statistics
+            #
+
+            self.validator.record_validation_result(
+                validation_reason
+            )
+
+            metadata[
+                "needs_validation"
+            ] = (
+                needs_validation
+            )
+
+            metadata[
+                "validation_reason"
+            ] = (
+                validation_reason
+            )
+
+            #
+            # Archive Health
+            #
 
             issues = (
                 self.health_analyzer.analyze(
@@ -201,6 +267,35 @@ class PhotoAnalyzer:
             self.health_engine.add_issues(
                 issues
             )
+
+            #
+            # Validation Record
+            #
+
+            record = (
+                ValidationRecordBuilder.build(
+                    metadata=metadata,
+                    classification=classification,
+                    validator_reason=validation_reason,
+                    needs_validation=needs_validation
+                )
+            )
+
+            self.validation_queue.add_record(
+                record
+            )
+
+        #
+        # Export Validation Data
+        #
+
+        self.validation_exporter.export(
+            self.validation_queue
+        )
+
+        #
+        # Archive Health Report
+        #
 
         report = (
             self.health_engine.build_report(
@@ -218,7 +313,9 @@ class PhotoAnalyzer:
             f"Near duplicate pairs: "
             f"{near_duplicate_count}\n"
             f"Validation Queue: "
-            f"{validation_count}"
+            f"{validation_count}\n"
+            f"Validation Records: "
+            f"{self.validation_queue.count()}"
         )
 
         return report

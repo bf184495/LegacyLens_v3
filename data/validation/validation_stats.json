@@ -1,0 +1,13 @@
+{
+    "total_records": 55,
+    "needs_validation": 29,
+    "average_confidence": 72.0,
+    "categories": {
+        "Photography": 55
+    },
+    "validation_reasons": {
+        "none": 26,
+        "random_sample": 3,
+        "requires_review": 26
+    }
+}

@@ -31,17 +31,25 @@ class ClassificationValidator:
         sample_rate: float = 0.10,
         confidence_threshold: int = 60
     ):
+
         self.sample_rate = sample_rate
+
         self.confidence_threshold = (
             confidence_threshold
         )
 
         self.stats = {
+
             "validated": 0,
+
             "low_confidence": 0,
+
             "requires_review": 0,
+
             "needs_review_category": 0,
+
             "random_sample": 0,
+
             "skipped": 0,
         }
 
@@ -49,26 +57,35 @@ class ClassificationValidator:
         self,
         result: ClassificationResult
     ) -> bool:
+        """
+        Convenience method.
+
+        Uses validation_reason() as the
+        single source of truth.
+        """
 
         reason = self.validation_reason(
             result
         )
 
-        if reason == "none":
-
-            self.stats["skipped"] += 1
-
-            return False
-
-        self.stats["validated"] += 1
-        self.stats[reason] += 1
-
-        return True
+        return reason != "none"
 
     def validation_reason(
         self,
         result: ClassificationResult
     ) -> str:
+        """
+        Determines WHY a classification
+        should be validated.
+
+        Returns:
+
+        - requires_review
+        - low_confidence
+        - needs_review_category
+        - random_sample
+        - none
+        """
 
         if result.requires_review:
 
@@ -99,10 +116,38 @@ class ClassificationValidator:
 
         return "none"
 
+    def record_validation_result(
+        self,
+        reason: str
+    ):
+        """
+        Updates validation statistics
+        after a decision has already
+        been made.
+        """
+
+        if reason == "none":
+
+            self.stats["skipped"] += 1
+
+            return
+
+        self.stats["validated"] += 1
+
+        if reason in self.stats:
+
+            self.stats[reason] += 1
+
     def build_validation_record(
         self,
         result: ClassificationResult
     ) -> dict:
+
+        reason = (
+            self.validation_reason(
+                result
+            )
+        )
 
         return {
 
@@ -115,10 +160,8 @@ class ClassificationValidator:
             "confidence":
                 result.confidence,
 
-            "reason":
-                self.validation_reason(
-                    result
-                ),
+            "reasons":
+                reason,
 
             "classifier":
                 result.classifier_name,

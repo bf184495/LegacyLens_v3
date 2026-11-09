@@ -1,0 +1,254 @@
+¦   bootstrap_legacylens_v3.py
+¦   main.py
+¦   ¦   __init__.py
+¦   ¦   ¦   people_adapter.py
+¦   ¦   ¦   photos_adapter.py
+¦   ¦   ¦   timeline_adapter.py
+¦   ¦   ¦   validation_adapter.py
+¦   ¦   +---__pycache__
+¦   ¦           people_adapter.cpython-314.pyc
+¦   ¦           photos_adapter.cpython-314.pyc
+¦   ¦           timeline_adapter.cpython-314.pyc
+¦   ¦           validation_adapter.cpython-314.pyc
+¦   ¦   ¦   graph_builder.py
+¦   ¦   +---__pycache__
+¦   ¦           graph_builder.cpython-314.pyc
+¦   ¦   ¦   base_node.py
+¦   ¦   ¦   collection.py
+¦   ¦   ¦   discovery.py
+¦   ¦   ¦   duplicate_group.py
+¦   ¦   ¦   edge.py
+¦   ¦   ¦   event.py
+¦   ¦   ¦   location.py
+¦   ¦   ¦   person.py
+¦   ¦   ¦   photo.py
+¦   ¦   ¦   story.py
+¦   ¦   ¦   task.py
+¦   ¦   ¦   validation.py
+¦   ¦   ¦   __init__.py
+¦   ¦   +---__pycache__
+¦   ¦           base_node.cpython-314.pyc
+¦   ¦           collection.cpython-314.pyc
+¦   ¦           discovery.cpython-314.pyc
+¦   ¦           duplicate_group.cpython-314.pyc
+¦   ¦           edge.cpython-314.pyc
+¦   ¦           event.cpython-314.pyc
+¦   ¦           location.cpython-314.pyc
+¦   ¦           person.cpython-314.pyc
+¦   ¦           photo.cpython-314.pyc
+¦   ¦           story.cpython-314.pyc
+¦   ¦           task.cpython-314.pyc
+¦   ¦           validation.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦   explorer_queries.py
+¦   ¦   ¦   people_queries.py
+¦   ¦   ¦   story_queries.py
+¦   ¦   ¦   workbench_queries.py
+¦   ¦   +---__pycache__
+¦   ¦           explorer_queries.cpython-314.pyc
+¦   ¦           people_queries.cpython-314.pyc
+¦   ¦           story_queries.cpython-314.pyc
+¦   ¦           workbench_queries.cpython-314.pyc
+¦   ¦   ¦   discovery_service.py
+¦   ¦   ¦   graph_service.py
+¦   ¦   ¦   recommendation_service.py
+¦   ¦   +---__pycache__
+¦   ¦           discovery_service.cpython-314.pyc
+¦   ¦           graph_service.cpython-314.pyc
+¦   ¦           recommendation_service.cpython-314.pyc
+¦   ¦   ¦   graph_repository.py
+¦   ¦   ¦   graph_serializer.py
+¦   ¦   +---__pycache__
+¦   ¦           graph_repository.cpython-314.pyc
+¦   ¦           graph_serializer.cpython-314.pyc
+¦   ¦   ¦   explorer_view.py
+¦   ¦   ¦   timeline_view.py
+¦   ¦   ¦   workbench_view.py
+¦   ¦   +---__pycache__
+¦   ¦           explorer_view.cpython-314.pyc
+¦   ¦           timeline_view.cpython-314.pyc
+¦   ¦           workbench_view.cpython-314.pyc
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦   ¦   __init__.py
+¦   ¦   ¦   engine.py
+¦   ¦   ¦   issue_registry.py
+¦   ¦   ¦   score.py
+¦   ¦   ¦   severity.py
+¦   ¦   ¦   __init__.py
+¦   ¦   +---__pycache__
+¦   ¦           engine.cpython-314.pyc
+¦   ¦           issue_registry.cpython-314.pyc
+¦   ¦           score.cpython-314.pyc
+¦   ¦           severity.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦   archive_item.py
+¦   ¦   ¦   classification_result.py
+¦   ¦   ¦   health_issue.py
+¦   ¦   ¦   health_report.py
+¦   ¦   ¦   module_info.py
+¦   ¦   ¦   relationship.py
+¦   ¦   ¦   scan_result.py
+¦   ¦   ¦   timeline_event.py
+¦   ¦   ¦   validation_record.py
+¦   ¦   ¦   __init__.py
+¦   ¦   +---__pycache__
+¦   ¦           archive_item.cpython-314.pyc
+¦   ¦           classification_result.cpython-314.pyc
+¦   ¦           health_issue.cpython-314.pyc
+¦   ¦           health_report.cpython-314.pyc
+¦   ¦           module_info.cpython-314.pyc
+¦   ¦           relationship.cpython-314.pyc
+¦   ¦           scan_result.cpython-314.pyc
+¦   ¦           timeline_event.cpython-314.pyc
+¦   ¦           validation_record.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦   loader.py
+¦   ¦   ¦   manifest.py
+¦   ¦   ¦   registry.py
+¦   ¦   ¦   __init__.py
+¦   ¦   +---__pycache__
+¦   ¦           loader.cpython-314.pyc
+¦   ¦           manifest.cpython-314.pyc
+¦   ¦           registry.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦   ¦   validation_exporter.py
+¦   ¦   ¦   validation_queue.py
+¦   ¦   ¦   validation_record_builder.py
+¦   ¦   ¦   validation_statistics.py
+¦   ¦   ¦   __init__.py
+¦   ¦   +---__pycache__
+¦   ¦           validation_exporter.cpython-314.pyc
+¦   ¦           validation_queue.cpython-314.pyc
+¦   ¦           validation_record_builder.cpython-314.pyc
+¦   ¦           __init__.cpython-314.pyc
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦   ¦   __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       __init__.py
+¦   ¦       python_inventory.txt
+¦   ¦       python_inventory_tree.txt
+¦   ¦       python_inventory_useful.txt
+¦   ¦   __init__.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦           __init__.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦           __init__.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦           __init__.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦           __init__.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦           __init__.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   classifier_engine.py
+¦   ¦   ¦   ¦   taxonomy.py
+¦   ¦   ¦   ¦   validator.py
+¦   ¦   ¦   ¦   ¦   adult_content_plugin.py
+¦   ¦   ¦   ¦   ¦   archive_asset_plugin.py
+¦   ¦   ¦   ¦   ¦   base_plugin.py
+¦   ¦   ¦   ¦   ¦   document_plugin.py
+¦   ¦   ¦   ¦   ¦   graphics_plugin.py
+¦   ¦   ¦   ¦   ¦   internet_content_plugin.py
+¦   ¦   ¦   ¦   ¦   photo_plugin.py
+¦   ¦   ¦   ¦   ¦   screenshot_plugin.py
+¦   ¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦   ¦           adult_content_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           archive_asset_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           base_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           document_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           graphics_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           internet_content_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           photo_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           screenshot_plugin.cpython-314.pyc
+¦   ¦   ¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           classifier_engine.cpython-314.pyc
+¦   ¦   ¦           validator.cpython-314.pyc
+¦   ¦   ¦   ¦   duplicates.py
+¦   ¦   ¦   ¦   duplicates_near.py
+¦   ¦   ¦   ¦   metadata.py
+¦   ¦   ¦   ¦   photo_analyzer.py
+¦   ¦   ¦   ¦   photo_health.py
+¦   ¦   ¦   ¦   scanner.py
+¦   ¦   ¦   ¦   __init__.py
+¦   ¦   ¦   +---__pycache__
+¦   ¦   ¦           duplicates.cpython-314.pyc
+¦   ¦   ¦           duplicates_near.cpython-314.pyc
+¦   ¦   ¦           metadata.cpython-314.pyc
+¦   ¦   ¦           photo_analyzer.cpython-314.pyc
+¦   ¦   ¦           photo_health.cpython-314.pyc
+¦   ¦   ¦           scanner.cpython-314.pyc
+¦   ¦   ¦           __init__.cpython-314.pyc
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   ¦       __init__.py
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-314.pyc
+¦   +---__pycache__
+¦           __init__.cpython-314.pyc
+¦       __init__.py
+¦       __init__.py
+¦   ¦   ¦   test_classifier_engine.py
+¦   ¦           test_graphics_plugin.py
+¦   ¦           test_photo_plugin.py
+¦   ¦           test_screenshot_plugin.py
+¦           test_builder.py
+¦           test_edges.py
+¦           test_graph_storage.py
+¦           test_node_models.py
+¦           test_relationships.py
+¦           test_workbench.py
+    ¦   main_window.py
+    ¦   __init__.py
+    ¦       __init__.py
+    ¦       __init__.py
+    ¦   ¦   health_summary.py
+    ¦   ¦   home_view.py
+    ¦   ¦   module_selector.py
+    ¦   ¦   recent_activity.py
+    ¦   ¦   __init__.py
+    ¦   +---__pycache__
+    ¦           home_view.cpython-314.pyc
+    ¦           module_selector.cpython-314.pyc
+    ¦           __init__.cpython-314.pyc
+    ¦       __init__.py
+    ¦   ¦   archive_health_workspace.py
+    ¦   ¦   base_workspace.py
+    ¦   ¦   contacts_workspace.py
+    ¦   ¦   photos_workspace.py
+    ¦   ¦   __init__.py
+    ¦   +---__pycache__
+    ¦           archive_health_workspace.cpython-314.pyc
+    ¦           base_workspace.cpython-314.pyc
+    ¦           contacts_workspace.cpython-314.pyc
+    ¦           photos_workspace.cpython-314.pyc
+    ¦           __init__.cpython-314.pyc
+    +---__pycache__
+            main_window.cpython-314.pyc
+            __init__.cpython-314.pyc
