@@ -22,6 +22,9 @@ from ui.workspaces import (
     PhotosWorkspace,
     ContactsWorkspace,
     ArchiveHealthWorkspace,
+    WorkbenchWorkspace,
+    ExplorerWorkspace,
+    TimelineWorkspace,
 )
 
 
@@ -67,6 +70,18 @@ class MainWindow(QMainWindow):
             ArchiveHealthWorkspace()
         )
 
+        self.workbench_workspace = (
+            WorkbenchWorkspace()
+        )
+
+        self.explorer_workspace = (
+            ExplorerWorkspace()
+        )
+
+        self.timeline_workspace = (
+            TimelineWorkspace()
+        )
+
         #
         # Wire signals
         #
@@ -105,6 +120,18 @@ class MainWindow(QMainWindow):
 
         self.stack.addWidget(
             self.archive_health_workspace
+        )
+
+        self.stack.addWidget(
+            self.workbench_workspace
+        )
+
+        self.stack.addWidget(
+            self.explorer_workspace
+        )
+
+        self.stack.addWidget(
+            self.timeline_workspace
         )
 
         self.setCentralWidget(
@@ -156,6 +183,36 @@ class MainWindow(QMainWindow):
                 version="0.1.0",
                 description="Health tools",
                 entry_point="platform.archive_health",
+            )
+        )
+
+        registry.register(
+            ModuleManifest(
+                module_id="workbench",
+                name="Workbench",
+                version="0.1.0",
+                description="Archive Graph Workbench",
+                entry_point="archive_graph.workbench",
+            )
+        )
+
+        registry.register(
+            ModuleManifest(
+                module_id="explorer",
+                name="Explorer",
+                version="0.1.0",
+                description="Archive Graph Explorer",
+                entry_point="archive_graph.explorer",
+            )
+        )
+
+        registry.register(
+            ModuleManifest(
+                module_id="timeline",
+                name="Timeline",
+                version="0.1.0",
+                description="Archive Graph Timeline",
+                entry_point="archive_graph.timeline",
             )
         )
 
@@ -247,6 +304,39 @@ class MainWindow(QMainWindow):
             )
         )
 
+        workbench_action = QAction(
+            "Workbench",
+            self
+        )
+
+        workbench_action.triggered.connect(
+            lambda: self.open_workspace(
+                "workbench"
+            )
+        )
+
+        explorer_action = QAction(
+            "Explorer",
+            self
+        )
+
+        explorer_action.triggered.connect(
+            lambda: self.open_workspace(
+                "explorer"
+            )
+        )
+
+        timeline_action = QAction(
+            "Timeline",
+            self
+        )
+
+        timeline_action.triggered.connect(
+            lambda: self.open_workspace(
+                "timeline"
+            )
+        )
+
         modules_menu.addAction(
             photos_action
         )
@@ -257,6 +347,18 @@ class MainWindow(QMainWindow):
 
         modules_menu.addAction(
             health_action
+        )
+
+        modules_menu.addAction(
+            workbench_action
+        )
+
+        modules_menu.addAction(
+            explorer_action
+        )
+
+        modules_menu.addAction(
+            timeline_action
         )
 
         #
@@ -326,6 +428,24 @@ class MainWindow(QMainWindow):
 
             self.stack.setCurrentWidget(
                 self.archive_health_workspace
+            )
+
+        elif module_id == "workbench":
+
+            self.stack.setCurrentWidget(
+                self.workbench_workspace
+            )
+
+        elif module_id == "explorer":
+
+            self.stack.setCurrentWidget(
+                self.explorer_workspace
+            )
+
+        elif module_id == "timeline":
+
+            self.stack.setCurrentWidget(
+                self.timeline_workspace
             )
 
         else:

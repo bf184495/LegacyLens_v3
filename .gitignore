@@ -64,6 +64,8 @@ data/databases/*.json
 
 # Test outputs
 graph_test.json
+data/validation/history
+data/validation_*
 
 ###############################################################################
 # Linting / Type Checking
@@ -154,6 +156,7 @@ imports/staging/
 *.orig
 *_backup.*
 *_BACKUP.*
+*.zip
 
 ###############################################################################
 # Backup Archives
